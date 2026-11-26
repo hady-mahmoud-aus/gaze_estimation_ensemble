@@ -1,0 +1,25 @@
+# AGENTS — Operating rules
+Last updated: 2026-11-28 | Documentation set r62
+
+## Research workflow
+- Be a critical research collaborator, not agreeable by default. Challenge user suggestions, premises and your own prior decisions when evidence, methodology, feasibility or alternatives warrant it. Explain the objection and recommend a better option; distinguish evidence from hypotheses. Do not manufacture disagreement.
+- Discuss major changes (model, split, metric, scope, protocol) and obtain approval before implementation. Log material decisions in `PROJECT.md` with date, rationale, evidence and whether made before or after relevant validation results.
+- Keep held-out data untouched for model selection until choices are locked; log any access (date, purpose, split, artifact), including accidental access. Distinguish preparation from scoring.
+- GitHub strictly read-only. Inspect relevant code before proposing changes. User executes on VM; never claim unverified execution. Preserve research evidence and active assets; follow the retention policy below before destructive edits. Keep data and weights out of Git.
+- Prefer larger unattended batches when appropriate (user 2026-11-28): bundle dependent routine steps with automatic sanity checks, provenance gates and recoverable outputs; pause only for material decisions or blockers. Keep short/debug steps incremental when useful. Direct responses: next action, complete terminal commands, essential checks and material limitations. For delivered code, give exact repository-relative destination and add/replace status; user copies manually, no copy commands unless requested.
+- Parallelize only independent, long-running jobs when beneficial; label screens, consider shared resources and avoid output conflicts. Short/dependent commands stay sequential.
+- Conda only; protect working `gaze` CUDA environment. Dry-run necessary installs; isolate incompatible dependencies. Record upstream patches. No silent input-size/clip-length changes.
+- Train/select/test per `PROJECT.md`; preserve negative results, flag leakage, distinguish debug/partial from final and model-only from end-to-end profiling. Time-box blockers and prioritize rubric, memory budget and deadline. Never mark unverified work complete.
+
+## Artifact retention (approved 2026-11-27)
+- Disposable development outputs (smoke/debug runs, temporary visualizations and regenerable Python caches) may be permanently removed after confirming their relevant findings are documented, no registry or active dependency requires them, and no writer is running. No archival requirement for these outputs. Use explicit paths and verify deletion.
+- Retain compact research evidence, including negative results: configurations, final metrics, histories, manifests, seeds, provenance hashes and completion markers. Preserve active checkpoints, canonical caches, original datasets, split manifests and locally patched upstream source.
+- Superseded research binaries, checkpoints, caches, downloaded archives and redundant progress records may be removed only after a dependency/recovery audit, recording the decision and obtaining approval for the exact batch. Preserve any unique evidence or non-reproducible assets; never run broad git clean, reset or prune as cleanup.
+
+## Documentation and sync protocol
+- At chat start read `agents/{AGENTS.md,PROJECT.md,MILESTONES.md,EXPERIMENTS.csv}` from current Project and repository sources; compare revisions and CSV digest, use newest verified set and flag conflicts. Never rely on stale GitHub paths when VM layout has changed.
+- Within a chat, the latest actual files at `/mnt/data/agents/` are canonical. Repository/Project sources may lag; never overwrite newer local revisions with older copies.
+- Assistant must directly update affected local files after meaningful verified progress or decisions, before replying. Do not delegate documentation edits via updater scripts or VM commands. Stamp changed Markdown files and update registry metadata in PROJECT if CSV changes; verify unique run IDs and digest. Revision stamps identify edits, not experiment dates; unchanged files may retain older revisions.
+- At milestone transitions and handoff, review all Markdown files; remove repetition, stale plans and contradictions. PROJECT owns protocols, decisions, findings and provenance; MILESTONES owns status/next steps. Replace superseded plans with outcomes, not conversation logs. Keep CSV concise, unknown fields blank; raw logs/configs/curves on VM.
+- Keep the compact repository layout in `PROJECT.md` current as source files/directories are added, moved or removed. Check GitHub read-only and use confirmed VM changes; distinguish proposed paths from applied changes, and tracked source from VM-only assets. Do not duplicate run artifacts or generated trees.
+- User manually synchronizes all four files to repository `agents/` and Project sources when moving chats. Provide latest actual files on request/handoff; no extra handoff or reference file. Disclose local versus applied changes.

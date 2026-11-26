@@ -1,0 +1,46 @@
+# Datasets
+/data/
+
+# Model weights and checkpoints
+/checkpoints/
+*.pth
+*.pyth
+*.pt
+*.ckpt
+*.safetensors
+
+# External model repositories
+/external/
+
+# Generated results and logs
+/results/
+logs/
+runs/
+*.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Conda and virtual environments
+.env
+.venv/
+venv/
+env/
+
+# IDE configuration
+.vscode/
+.idea/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Compressed archives
+*.zip
+*.tar
+*.tar.gz
+
+# OS files
+.DS_Store
+Thumbs.db

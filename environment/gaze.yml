@@ -1,0 +1,24 @@
+name: gaze
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - mkl=2023.1.0
+  - numpy[version='<2']
+  - pytorch-cuda=12.1
+  - pytorch::pytorch-mutex==1.0=cuda
+  - pytorch::pytorch==2.5.1=py3.10_cuda12.1_cudnn9.1.0_0
+  - pytorch::torchvision==0.20.1=py310_cu121
+  - einops
+  - fvcore
+  - iopath
+  - ipdb
+  - psutil
+  - simplejson
+  - tensorboard
+  - yacs
+  - matplotlib-base=3.8
+  - pandas=2.2
+  - scipy=1.10.1
+  - opencv
+  - conda-forge::git
